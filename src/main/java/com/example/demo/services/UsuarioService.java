@@ -30,6 +30,14 @@ public class UsuarioService {
     public long contarPacientes(){
         return usuarioRepository.count();
     }
+    public boolean borrarTodos(){
+        try{
+            usuarioRepository.deleteAll();
+            return true;
+        }catch(Exception err){
+            return false;
+        }
+    }
 
     public ArrayList<UsuarioModel>  obtenerPorPrioridad(Integer prioridad) {
         return usuarioRepository.findByPrioridad(prioridad);

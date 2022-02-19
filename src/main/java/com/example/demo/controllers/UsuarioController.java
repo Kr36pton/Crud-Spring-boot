@@ -37,6 +37,15 @@ public class UsuarioController {
     public long contarPacientes(){
         return this.usuarioService.contarPacientes();
     }
+    @DeleteMapping( path = "/deleteall")
+    public String borrarTodos(){
+        boolean ok = this.usuarioService.borrarTodos();
+        if (ok){
+            return "Se eliminaron todos los pacientes ";
+        }else{
+            return "No pudo eliminar todos los pacientes";
+        }
+    }
 
     @GetMapping("/query")
     public ArrayList<UsuarioModel> obtenerUsuarioPorPrioridad(@RequestParam("prioridad") Integer prioridad){

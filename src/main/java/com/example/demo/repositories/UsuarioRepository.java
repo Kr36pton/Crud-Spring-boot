@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 public interface UsuarioRepository extends CrudRepository<UsuarioModel, Long> {
     public abstract ArrayList<UsuarioModel> findByPrioridad(Integer prioridad);
 
-    public abstract ArrayList<UsuarioModel> findByNombre(String nombre);
-
      long count();
+
+     void deleteAll();
 }
